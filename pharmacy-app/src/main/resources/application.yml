@@ -1,0 +1,7 @@
+server:
+  port: 8485
+  servlet:
+    context-path: /pharmacy
+spring:
+  application:
+    name: pharmacyApp
