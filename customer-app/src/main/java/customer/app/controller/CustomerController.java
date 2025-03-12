@@ -18,8 +18,18 @@ public class CustomerController {
         return pharmacyFeignClient.getMedicine(id);
     }
 
-    @PostMapping("/create")
+    @PostMapping("/medicines/create")
     public Medicine createMedicine(@RequestBody Medicine medicine) {
         return pharmacyFeignClient.create(medicine);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        return pharmacyFeignClient.delete(id);
+    }
+
+    @PutMapping("/update/{id}")
+    public Medicine updateOrder(@PathVariable Long id, @RequestBody Medicine updateMedicine) {
+        return pharmacyFeignClient.update(id, updateMedicine);
     }
 }
