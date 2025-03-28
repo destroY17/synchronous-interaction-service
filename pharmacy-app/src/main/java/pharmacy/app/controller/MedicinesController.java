@@ -28,7 +28,7 @@ public class MedicinesController {
     }
 
     @PutMapping("/update/{id}")
-    public Medicine updateOrder(@PathVariable Long id, @RequestBody Medicine updateMedicine) {
+    public Medicine update(@PathVariable Long id, @RequestBody Medicine updateMedicine) {
         return medicinesService.update(id, updateMedicine);
     }
 }
