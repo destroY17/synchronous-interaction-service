@@ -29,7 +29,7 @@ public class CustomerController {
     }
 
     @PutMapping("/update/{id}")
-    public Medicine updateOrder(@PathVariable Long id, @RequestBody Medicine updateMedicine) {
+    public Medicine update(@PathVariable Long id, @RequestBody Medicine updateMedicine) {
         return pharmacyFeignClient.update(id, updateMedicine);
     }
 }
