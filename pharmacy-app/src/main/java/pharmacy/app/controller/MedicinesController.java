@@ -17,17 +17,17 @@ public class MedicinesController {
         return medicinesService.get(id);
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public Medicine create(@RequestBody Medicine medicine) {
         return medicinesService.create(medicine);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public String delete(@PathVariable Long id) {
         return medicinesService.delete(id).getName();
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public Medicine update(@PathVariable Long id, @RequestBody Medicine updateMedicine) {
         return medicinesService.update(id, updateMedicine);
     }

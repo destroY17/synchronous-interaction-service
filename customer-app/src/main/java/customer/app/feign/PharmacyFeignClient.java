@@ -13,13 +13,13 @@ public interface PharmacyFeignClient {
     @GetMapping("/medicines/{id}")
     Medicine getMedicine(@PathVariable Long id);
 
-    @PostMapping("/medicines/create")
+    @PostMapping("/medicines")
     Medicine create(Medicine medicine);
 
-    @DeleteMapping("/medicines/delete/{id}")
+    @DeleteMapping("/medicines/{id}")
     String delete(@PathVariable Long id);
 
-    @PutMapping("/medicines/update/{id}")
+    @PutMapping("/medicines/{id}")
     Medicine update(@PathVariable Long id, Medicine medicine);
 
 }
