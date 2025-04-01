@@ -16,7 +16,7 @@ public class GrpcController {
 
     private final GrpcService grpcService;
 
-    @GetMapping(value = "/getMedicine")
+    @GetMapping(value = "/medicine")
     public Medicine getMedicine() {
         return grpcService.getMedicine();
     }
