@@ -5,3 +5,6 @@ server:
 spring:
   application:
     name: pharmacyApp
+logging:
+  file:
+    name: pharmacy-service.log

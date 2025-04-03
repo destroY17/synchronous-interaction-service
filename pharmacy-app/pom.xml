@@ -52,6 +52,16 @@
             <artifactId>grpc-spring-boot-starter</artifactId>
             <version>4.5.4</version>
         </dependency>
+
+        <!-- Swagger-->
+        <!-- http://localhost:8485/pharmacy/swagger-ui/index.html ссылка на Swagger-->
+        <!-- http://localhost:8485/pharmacy/v3/api-docs ссылка на страницу API-документации-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
