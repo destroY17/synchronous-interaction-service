@@ -14,8 +14,11 @@ public class MedicineGrpcServiceImpl extends MedicineServiceImplBase {
                 .setName("Аспирин")
                 .setCost(100)
                 .build();
+
+        // отправляем ответ
         responseObserver.onNext(medicine);
-        log.info("Выдано лекарство {}, стоимостью {}", medicine.getName(), medicine.getCost());
+        log.info("Выдано лекарство {}, стоимостью {} через gRPC", medicine.getName(), medicine.getCost());
+        // уведомление клиента о завершении обработки запроса
         responseObserver.onCompleted();
     }
 }

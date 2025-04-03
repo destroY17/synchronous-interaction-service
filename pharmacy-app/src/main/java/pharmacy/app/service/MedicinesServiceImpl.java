@@ -19,6 +19,7 @@ public class MedicinesServiceImpl implements MedicinesService {
         Medicine medicine = new Medicine();
         medicine.setCost(new Random().nextInt());
         medicine.setName("Лекарство");
+        log.info("Выдано лекарство из аптеки с названием {} и стоимостью {}", medicine.getName(), medicine.getCost());
         return medicine;
     }
 

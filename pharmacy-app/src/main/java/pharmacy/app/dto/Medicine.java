@@ -11,8 +11,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Medicine implements Serializable {
 
+    /**
+     * Название лекарства.
+     */
     String name;
 
+    /**
+     * Стоимость лекарства.
+     */
     Integer cost;
 
 }
