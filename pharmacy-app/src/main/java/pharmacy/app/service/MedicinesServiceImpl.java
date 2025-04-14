@@ -1,9 +1,11 @@
 package pharmacy.app.service;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import pharmacy.app.api.MedicinesService;
 import pharmacy.app.dto.Medicine;
+import pharmacy.app.exception.PharmacyException;
 
 import java.util.Random;
 
@@ -12,7 +14,10 @@ import java.util.Random;
  */
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class MedicinesServiceImpl implements MedicinesService {
+
+    private final MedicineValidator medicineValidator;
 
     @Override
     public Medicine get(Long id) {
@@ -25,8 +30,11 @@ public class MedicinesServiceImpl implements MedicinesService {
 
     @Override
     public Medicine create(Medicine medicine) {
-        log.info("Добавлено лекарство в аптеку с названием {} и стоимостью {}", medicine.getName(), medicine.getCost());
-        return medicine;
+        if (medicineValidator.isValid(medicine)) {
+            log.info("Добавлено лекарство в аптеку с названием {} и стоимостью {}", medicine.getName(), medicine.getCost());
+            return medicine;
+        }
+        throw new PharmacyException("Не удалось создать лекарство: " + medicine);
     }
 
     @Override

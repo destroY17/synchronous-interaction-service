@@ -59,6 +59,17 @@
             <version>2.6.0</version>
         </dependency>
 
+
+        <!-- Зависимости для тестирования-->
+
+                <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-test</artifactId>
+                    <version>3.4.3</version>
+                    <scope>test</scope>
+                </dependency>
+
     </dependencies>
 
     <build>
